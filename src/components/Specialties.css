@@ -1,0 +1,219 @@
+.specialties {
+  padding: 100px 0;
+  background: linear-gradient(180deg, var(--white) 0%, var(--pink-bg) 100%);
+}
+
+.specialties__inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* Header */
+.specialties__header {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto 60px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.8s var(--ease-out);
+}
+
+.specialties__header--visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.specialties__header .section-label {
+  justify-content: center;
+}
+
+.specialties__title {
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 3vw, 2.6rem);
+  font-weight: 700;
+  color: var(--dark);
+  margin: 16px 0 12px;
+}
+
+.specialties__title em {
+  color: var(--pink);
+  font-style: italic;
+}
+
+.specialties__subtitle {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
+/* Grid */
+.specialties__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  margin-bottom: 60px;
+}
+
+/* Card */
+.spec-card {
+  background: var(--white);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+  transition: all 0.4s ease, opacity 0.7s var(--ease-out), transform 0.7s var(--ease-out);
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.spec-card--visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.spec-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 16px 48px rgba(233, 30, 140, 0.15);
+}
+
+.spec-card__img {
+  position: relative;
+  height: 200px;
+  overflow: hidden;
+}
+
+.spec-card__img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.spec-card:hover .spec-card__img img {
+  transform: scale(1.08);
+}
+
+.spec-card__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(233, 30, 140, 0.6), transparent);
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+  padding: 14px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.spec-card:hover .spec-card__overlay {
+  opacity: 1;
+}
+
+.spec-card__icon {
+  font-size: 2rem;
+  filter: drop-shadow(0 2px 8px rgba(0,0,0,0.3));
+}
+
+.spec-card__body {
+  padding: 20px;
+}
+
+.spec-card__title {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--dark);
+  margin-bottom: 8px;
+}
+
+.spec-card__desc {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  line-height: 1.65;
+  margin-bottom: 14px;
+}
+
+.spec-card__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.spec-card__tag {
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: var(--pink);
+  background: var(--pink-pale);
+  padding: 3px 10px;
+  border-radius: 50px;
+}
+
+/* CTA banner */
+.specialties__cta {
+  background: linear-gradient(135deg, var(--pink), #c91578);
+  border-radius: 24px;
+  padding: 40px 48px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.8s var(--ease-out) 0.4s;
+}
+
+.specialties__cta--visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.specialties__cta-content h3 {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 6px;
+}
+
+.specialties__cta-content p {
+  color: rgba(255,255,255,0.85);
+  font-size: 0.9rem;
+}
+
+.specialties__cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--white);
+  color: var(--pink);
+  padding: 14px 28px;
+  border-radius: 50px;
+  font-weight: 700;
+  font-size: 0.9rem;
+  white-space: nowrap;
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+}
+
+.specialties__cta-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+}
+
+@media (max-width: 1024px) {
+  .specialties__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .specialties__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .specialties__cta {
+    flex-direction: column;
+    text-align: center;
+    padding: 32px 24px;
+  }
+}
