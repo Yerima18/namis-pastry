@@ -12,6 +12,7 @@ export default function Hero() {
   const scrollToOrder = () => {
     document.getElementById('order')?.scrollIntoView({ behavior: 'smooth' })
   }
+  
 
   const scrollToGallery = () => {
     document.getElementById('gallery')?.scrollIntoView({ behavior: 'smooth' })
@@ -86,16 +87,16 @@ export default function Hero() {
         <div className={`hero__visual ${visible ? 'hero__visual--visible' : ''}`}>
           <div className="hero__collage">
             <div className="hero__img-wrap hero__img-wrap--main">
-              <img src="/images/cake-pink-butterfly.jpg" alt="Gâteau personnalisé Nami's Pastry" />
+              <img src="/images/anniv-01.jpg" alt="Gâteau personnalisé Namis Pastry" />
               <div className="hero__img-badge">
                 <span>✨ Sur mesure</span>
               </div>
             </div>
             <div className="hero__img-wrap hero__img-wrap--sm hero__img-wrap--top">
-              <img src="/images/cake-chocolate-drip.jpg" alt="Gâteau chocolat" />
+              <img src="/images/anniv-10.jpg" alt="Gâteau chocolat" />
             </div>
             <div className="hero__img-wrap hero__img-wrap--sm hero__img-wrap--bottom">
-              <img src="/images/mini-pink-heart.jpg" alt="Mini entremet" />
+              <img src="/images/mini-entremet-01.jpg" alt="Mini entremet" />
             </div>
           </div>
 

@@ -43,10 +43,10 @@ export default function About() {
         {/* Left image stack */}
         <div className={`about__images ${visible ? 'about__images--visible' : ''}`}>
           <div className="about__img-main">
-            <img src="/images/cake-choco-gold.jpg" alt="Nami's Pastry atelier" />
+            <img src="/images/anniv-05.jpg" alt="Namis Pastry atelier" />
           </div>
           <div className="about__img-accent">
-            <img src="/images/cake-green-anniversaire.jpg" alt="Gâteau anniversaire" />
+            <img src="/images/entremet-01.jpg" alt="Gâteau anniversaire" />
           </div>
           <div className="about__img-tag">
             <span>🏆</span>
@@ -67,7 +67,7 @@ export default function About() {
           </h2>
 
           <p className="about__text">
-            Nami's Pastry est née d'une passion profonde pour l'art de la pâtisserie.
+            Namis Pastry est née d'une passion profonde pour l'art de la pâtisserie.
             Nous croyons que chaque célébration mérite un gâteau aussi unique que
             l'événement qu'il honore.
           </p>

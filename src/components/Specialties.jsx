@@ -6,29 +6,29 @@ const categories = [
     icon: '🎂',
     title: 'Gâteaux d\'anniversaire',
     desc: 'Des créations sur mesure pour célébrer chaque anniversaire avec style. Personnalisez la couleur, le design et le message.',
-    image: '/images/cake-chocolate-birthday.jpg',
+    image: '/images/anniv-01.jpg',
     tags: ['Sur mesure', 'Multi-étages', 'Personnalisé'],
   },
   {
     icon: '🍰',
     title: 'Mini Entremets',
     desc: 'De délicates petites merveilles individuelles, parfaites pour des occasions intimes ou des événements.',
-    image: '/images/mini-pink-heart.jpg',
+    image: '/images/mini-entremet-01.jpg',
     tags: ['Individuel', 'Élégant', 'Savoureux'],
   },
   {
-    icon: '🥐',
-    title: 'Pâtisseries & Viennoiseries',
-    desc: 'Croissants, cakes marbrés, tartelettes... des classiques revisités avec notre touche unique.',
-    image: '/images/pastry-box.jpg',
-    tags: ['Artisanal', 'Frais', 'Varié'],
+    icon: '✨',
+    title: 'Entremets',
+    desc: 'Des entremets raffinés aux textures et saveurs délicates, pensés pour impressionner à chaque occasion.',
+    image: '/images/entremet-01.jpg',
+    tags: ['Raffiné', 'Élégant', 'Savoureux'],
   },
   {
     icon: '🍫',
-    title: 'Chocolats & Douceurs',
-    desc: "Truffes, mendiants, bonbons fondants — nos chocolats sont des cadeaux parfaits pour toute occasion.",
-    image: '/images/sweets-mango-lemon.jpg',
-    tags: ['Fin', 'Cadeau', 'Premium'],
+    title: 'Trompe Oeil',
+    desc: "Des créations bluffantes qui imitent à la perfection des objets du quotidien — un gâteau qui surprend autant qu'il régale.",
+    image: '/images/trompe-oeil-01.jpg',
+    tags: ['Réaliste', 'Surprenant', 'Unique'],
   },
 ]
 
@@ -59,7 +59,7 @@ export default function Specialties() {
             Des spécialités qui font <em>rêver</em>
           </h2>
           <p className="specialties__subtitle">
-            De la commande personnalisée aux douceurs du quotidien, découvrez l'univers de Nami's Pastry.
+            De la commande personnalisée aux douceurs du quotidien, découvrez l'univers de Namis Pastry.
           </p>
         </div>
 

@@ -20,7 +20,9 @@
   height: 64px;
   width: auto;
   object-fit: contain;
-  filter: brightness(0) invert(1);
+  background: white;
+  border-radius: 12px;
+  padding: 6px 10px;
 }
 
 .footer__tagline {
@@ -36,8 +38,8 @@
 }
 
 .footer__social a {
-  width: 40px;
-  height: 40px;
+  width: 44px;
+  height: 44px;
   border-radius: 50%;
   background: rgba(255,255,255,0.08);
   display: flex;

@@ -42,9 +42,10 @@ export default function Order() {
 
   const handleWhatsApp = (e) => {
     e.preventDefault()
-    const msg = `Bonjour Nami's Pastry ! 🎂\n\nNom: ${form.name}\nTéléphone: ${form.phone}\nType d'événement: ${form.event}\nDate souhaitée: ${form.date}\n\nMessage: ${form.message}\n\nMerci !`
+    const msg = `Bonjour Namis Pastry ! 🎂\n\nNom: ${form.name}\nTéléphone: ${form.phone}\nType d'événement: ${form.event}\nDate souhaitée: ${form.date}\n\nMessage: ${form.message}\n\nMerci !`
     const url = `https://wa.me/22966166244?text=${encodeURIComponent(msg)}`
     window.open(url, '_blank')
+    setForm({ name: '', phone: '', event: '', date: '', message: '' })
   }
 
   return (
@@ -159,7 +160,7 @@ export default function Order() {
           {/* Contact card */}
           <div className="order__contact">
             <div className="order__contact-card">
-              <img src="/logo.png" alt="Nami's Pastry" className="order__contact-logo" />
+              <img src="/logo.png" alt="Namis Pastry" className="order__contact-logo" />
               <p>Pâtisserie artisanale</p>
 
               <div className="order__contact-links">
@@ -200,7 +201,7 @@ export default function Order() {
                   <span className="order__info-icon">✉️</span>
                   <div>
                     <strong>Email</strong>
-                    <p><a href="mailto:mistourathnalla96@gmail.com" style={{color:'rgba(255,255,255,0.85)'}}>mistourathnalla96@gmail.com</a></p>
+                    <p><a href="mailto:mistourathnalla96@gmail.com" className="order__contact-email">mistourathnalla96@gmail.com</a></p>
                   </div>
                 </div>
                 <div className="order__info-item">

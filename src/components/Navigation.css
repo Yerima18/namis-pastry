@@ -97,9 +97,9 @@
   background: none;
   border: none;
   cursor: pointer;
-  padding: 4px;
+  padding: 10px;
   position: relative;
-  z-index: 101;
+  z-index: 102;
 }
 
 .nav__burger span {
@@ -151,7 +151,7 @@
     gap: 32px;
     transform: translateX(100%);
     transition: transform 0.4s var(--ease-out);
-    z-index: 99;
+    z-index: 101;
   }
 
   .nav__links--open {

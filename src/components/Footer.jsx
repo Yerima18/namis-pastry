@@ -9,7 +9,7 @@ export default function Footer() {
         {/* Brand */}
         <div className="footer__brand">
           <div className="footer__logo">
-            <img src="/logo.png" alt="Nami's Pastry" className="footer__logo-img" />
+            <img src="/logo.png" alt="Namis Pastry" className="footer__logo-img" />
           </div>
           <p className="footer__tagline">
             Chaque gâteau est une promesse de bonheur.<br />
@@ -50,11 +50,13 @@ export default function Footer() {
         <div className="footer__links">
           <h4>Nos créations</h4>
           <ul>
-            <li><a href="#specialties">Gâteaux d'anniversaire</a></li>
-            <li><a href="#specialties">Mini Entremets</a></li>
-            <li><a href="#specialties">Pâtisseries</a></li>
-            <li><a href="#specialties">Chocolats</a></li>
-            <li><a href="#specialties">Événements spéciaux</a></li>
+            <li><a href="#gallery">Gâteaux d'anniversaire</a></li>
+            <li><a href="#gallery">Mini Entremets</a></li>
+            <li><a href="#gallery">Entremets</a></li>
+            <li><a href="#gallery">Mignardises</a></li>
+            <li><a href="#gallery">Trompe Oeil</a></li>
+            <li><a href="#gallery">Bûche de Noël</a></li>
+            <li><a href="#gallery">Événements</a></li>
           </ul>
         </div>
 
@@ -76,7 +78,7 @@ export default function Footer() {
       </div>
 
       <div className="footer__bottom">
-        <p>© {year} Nami's Pastry. Tous droits réservés.</p>
+        <p>© {year} Namis Pastry. Tous droits réservés.</p>
         <p>Fait avec ❤️ à Cotonou, Bénin</p>
       </div>
     </footer>
