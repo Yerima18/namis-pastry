@@ -98,6 +98,8 @@
   border: none;
   cursor: pointer;
   padding: 4px;
+  position: relative;
+  z-index: 101;
 }
 
 .nav__burger span {
@@ -143,13 +145,13 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(255, 255, 255, 0.98);
+    background: rgba(255, 255, 255, 1);
     flex-direction: column;
     justify-content: center;
     gap: 32px;
     transform: translateX(100%);
     transition: transform 0.4s var(--ease-out);
-    z-index: -1;
+    z-index: 99;
   }
 
   .nav__links--open {
