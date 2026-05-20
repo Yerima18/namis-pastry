@@ -230,9 +230,12 @@
   top: 90px;
 }
 
-.order__contact-icon {
-  font-size: 3rem;
-  margin-bottom: 12px;
+.order__contact-logo {
+  height: 80px;
+  width: auto;
+  object-fit: contain;
+  filter: brightness(0) invert(1);
+  margin-bottom: 4px;
 }
 
 .order__contact-card h3 {

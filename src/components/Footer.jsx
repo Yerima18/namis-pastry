@@ -9,8 +9,7 @@ export default function Footer() {
         {/* Brand */}
         <div className="footer__brand">
           <div className="footer__logo">
-            <span>🧁</span>
-            <span>Nami's <em>Pastry</em></span>
+            <img src="/logo.png" alt="Nami's Pastry" className="footer__logo-img" />
           </div>
           <p className="footer__tagline">
             Chaque gâteau est une promesse de bonheur.<br />
