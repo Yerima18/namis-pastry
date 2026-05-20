@@ -197,6 +197,13 @@ export default function Order() {
                   </div>
                 </div>
                 <div className="order__info-item">
+                  <span className="order__info-icon">✉️</span>
+                  <div>
+                    <strong>Email</strong>
+                    <p><a href="mailto:mistourathnalla96@gmail.com" style={{color:'rgba(255,255,255,0.85)'}}>mistourathnalla96@gmail.com</a></p>
+                  </div>
+                </div>
+                <div className="order__info-item">
                   <span className="order__info-icon">🕐</span>
                   <div>
                     <strong>Délai de commande</strong>

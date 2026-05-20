@@ -32,9 +32,10 @@
 }
 
 .nav__logo-img {
-  height: 52px;
+  height: 72px;
   width: auto;
   object-fit: contain;
+  mix-blend-mode: multiply;
 }
 
 .nav__links {
@@ -120,6 +121,18 @@
 }
 
 @media (max-width: 768px) {
+  .nav {
+    padding: 10px 0;
+  }
+
+  .nav--scrolled {
+    padding: 8px 0;
+  }
+
+  .nav__logo-img {
+    height: 54px;
+  }
+
   .nav__burger {
     display: flex;
   }

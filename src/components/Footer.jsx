@@ -65,6 +65,7 @@ export default function Footer() {
             <li><a href="tel:+22966166244">📞 +229 66 16 62 44</a></li>
             <li><a href="https://wa.me/22966166244" target="_blank" rel="noopener noreferrer">💬 WhatsApp</a></li>
             <li><a href="https://www.instagram.com/namis_pastry/" target="_blank" rel="noopener noreferrer">📸 @namis_pastry</a></li>
+            <li><a href="mailto:mistourathnalla96@gmail.com">✉️ mistourathnalla96@gmail.com</a></li>
           </ul>
           <div className="footer__hours">
             <strong>Horaires</strong>
