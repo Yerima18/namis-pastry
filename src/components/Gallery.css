@@ -86,6 +86,7 @@
   background: var(--pink);
   border-color: var(--pink);
   color: var(--white);
+  -webkit-text-fill-color: var(--white);
 }
 
 /* Grid */
