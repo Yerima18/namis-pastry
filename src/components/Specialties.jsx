@@ -97,7 +97,7 @@ export default function Specialties() {
             <p>Partagez-nous votre vision et nous créerons le gâteau de vos rêves.</p>
           </div>
           <a
-            href="https://wa.me/22900000000?text=Bonjour%20Nami's%20Pastry%2C%20je%20voudrais%20commander%20un%20g%C3%A2teau%20personnalis%C3%A9."
+            href="https://wa.me/c/22966166244"
             target="_blank"
             rel="noopener noreferrer"
             className="specialties__cta-btn"

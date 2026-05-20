@@ -39,7 +39,7 @@ export default function Navigation() {
           ))}
           <li>
             <a
-              href="https://wa.me/22900000000"
+              href="https://wa.me/c/22966166244"
               target="_blank"
               rel="noopener noreferrer"
               className="nav__cta"

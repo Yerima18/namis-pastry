@@ -43,7 +43,7 @@ export default function Order() {
   const handleWhatsApp = (e) => {
     e.preventDefault()
     const msg = `Bonjour Nami's Pastry ! 🎂\n\nNom: ${form.name}\nTéléphone: ${form.phone}\nType d'événement: ${form.event}\nDate souhaitée: ${form.date}\n\nMessage: ${form.message}\n\nMerci !`
-    const url = `https://wa.me/22900000000?text=${encodeURIComponent(msg)}`
+    const url = `https://wa.me/22966166244?text=${encodeURIComponent(msg)}`
     window.open(url, '_blank')
   }
 
@@ -165,7 +165,7 @@ export default function Order() {
 
               <div className="order__contact-links">
                 <a
-                  href="https://wa.me/22900000000"
+                  href="https://wa.me/22966166244"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="order__contact-link order__contact-link--wa"
@@ -176,7 +176,7 @@ export default function Order() {
                   </svg>
                   WhatsApp
                 </a>
-                <a href="tel:+22900000000" className="order__contact-link order__contact-link--phone">
+                <a href="tel:+22966166244" className="order__contact-link order__contact-link--phone">
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                     <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.16 6.16l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7a2 2 0 0 1 1.72 2.01z"/>
                   </svg>
