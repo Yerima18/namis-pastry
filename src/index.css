@@ -93,3 +93,34 @@ a {
 section {
   scroll-margin-top: 70px;
 }
+
+/* Respect user motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  html {
+    scroll-behavior: auto;
+  }
+
+  .hero__content,
+  .hero__visual,
+  .about__images,
+  .about__content,
+  .specialties__header,
+  .spec-card,
+  .specialties__cta,
+  .gallery__header,
+  .gallery__filters,
+  .gallery__item,
+  .order__header,
+  .order__steps,
+  .order__content {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}

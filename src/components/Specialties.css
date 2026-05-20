@@ -16,7 +16,7 @@
   margin: 0 auto 60px;
   opacity: 0;
   transform: translateY(20px);
-  transition: all 0.8s var(--ease-out);
+  transition: opacity 0.8s var(--ease-out), transform 0.8s var(--ease-out);
 }
 
 .specialties__header--visible {
@@ -61,7 +61,7 @@
   border-radius: 20px;
   overflow: hidden;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
-  transition: all 0.4s ease, opacity 0.7s var(--ease-out), transform 0.7s var(--ease-out);
+  transition: opacity 0.7s var(--ease-out), transform 0.7s var(--ease-out), box-shadow 0.4s ease;
   opacity: 0;
   transform: translateY(30px);
 }
@@ -159,7 +159,7 @@
   gap: 24px;
   opacity: 0;
   transform: translateY(20px);
-  transition: all 0.8s var(--ease-out) 0.4s;
+  transition: opacity 0.8s var(--ease-out) 0.4s, transform 0.8s var(--ease-out) 0.4s;
 }
 
 .specialties__cta--visible {
@@ -191,7 +191,7 @@
   font-weight: 700;
   font-size: 0.9rem;
   white-space: nowrap;
-  transition: all 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   flex-shrink: 0;
 }
 

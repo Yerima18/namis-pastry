@@ -81,7 +81,12 @@
 .hero__content {
   opacity: 0;
   transform: translateY(30px);
-  transition: all 0.9s var(--ease-out);
+  transition: opacity 0.9s var(--ease-out), transform 0.9s var(--ease-out);
+  will-change: opacity, transform;
+}
+
+.hero__content--visible {
+  will-change: auto;
 }
 
 .hero__content--visible {
@@ -177,7 +182,7 @@
   font-size: 0.95rem;
   font-weight: 600;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: background-color 0.3s ease, border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
   border: 2px solid transparent;
 }
 
@@ -243,7 +248,12 @@
   position: relative;
   opacity: 0;
   transform: translateX(30px);
-  transition: all 1s var(--ease-out) 0.2s;
+  transition: opacity 1s var(--ease-out) 0.2s, transform 1s var(--ease-out) 0.2s;
+  will-change: opacity, transform;
+}
+
+.hero__visual--visible {
+  will-change: auto;
 }
 
 .hero__visual--visible {

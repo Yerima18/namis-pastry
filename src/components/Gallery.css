@@ -16,7 +16,7 @@
   margin: 0 auto 40px;
   opacity: 0;
   transform: translateY(20px);
-  transition: all 0.8s var(--ease-out);
+  transition: opacity 0.8s var(--ease-out), transform 0.8s var(--ease-out);
 }
 
 .gallery__header--visible {
@@ -56,7 +56,7 @@
   margin-bottom: 48px;
   opacity: 0;
   transform: translateY(15px);
-  transition: all 0.6s var(--ease-out) 0.2s;
+  transition: opacity 0.6s var(--ease-out) 0.2s, transform 0.6s var(--ease-out) 0.2s;
 }
 
 .gallery__filters--visible {
@@ -74,7 +74,7 @@
   border: 2px solid var(--border);
   background: transparent;
   color: var(--text-muted);
-  transition: all 0.25s ease;
+  transition: background-color 0.25s ease, border-color 0.25s ease, color 0.25s ease;
 }
 
 .gallery__filter:hover {
@@ -203,7 +203,7 @@
   font-weight: 600;
   border-radius: 50px;
   cursor: pointer;
-  transition: all 0.25s ease;
+  transition: background-color 0.25s ease, color 0.25s ease;
 }
 
 .gallery__more-btn:hover {

@@ -19,7 +19,7 @@
   height: 520px;
   opacity: 0;
   transform: translateX(-30px);
-  transition: all 0.9s var(--ease-out);
+  transition: opacity 0.9s var(--ease-out), transform 0.9s var(--ease-out);
 }
 
 .about__images--visible {
@@ -94,7 +94,7 @@
 .about__content {
   opacity: 0;
   transform: translateX(30px);
-  transition: all 0.9s var(--ease-out) 0.15s;
+  transition: opacity 0.9s var(--ease-out) 0.15s, transform 0.9s var(--ease-out) 0.15s;
 }
 
 .about__content--visible {
