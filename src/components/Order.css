@@ -277,13 +277,13 @@
   transform: translateY(-2px);
 }
 
-.order__contact-link--phone {
-  background: rgba(255,255,255,0.2);
+.order__contact-link--ig {
+  background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
   color: white;
 }
 
-.order__contact-link--phone:hover {
-  background: rgba(255,255,255,0.3);
+.order__contact-link--ig:hover {
+  filter: brightness(1.1);
   transform: translateY(-2px);
 }
 
