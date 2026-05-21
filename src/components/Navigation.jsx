@@ -6,6 +6,7 @@ const navLinks = [
   { label: 'À propos', href: '#about' },
   { label: 'Spécialités', href: '#specialties' },
   { label: 'Galerie', href: '#gallery' },
+  { label: 'Avis', href: '#reviews' },
 ]
 
 export default function Navigation() {
