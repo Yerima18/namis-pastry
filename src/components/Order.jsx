@@ -160,7 +160,7 @@ export default function Order() {
           {/* Contact card */}
           <div className="order__contact">
             <div className="order__contact-card">
-              <img src="/logo.png" alt="Namis Pastry" className="order__contact-logo" />
+              <img src="/images/logo-namis-new.jpg" alt="Namis Pastry" className="order__contact-logo" />
               <p>Pâtisserie artisanale</p>
 
               <div className="order__contact-links">

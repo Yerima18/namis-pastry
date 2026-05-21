@@ -147,12 +147,14 @@ const galleryItems = [
 const categories = ['Tous', 'Anniversaire', 'Mini Entremets', 'Entremets', 'Mignardises', 'Trompe Oeil', 'Bûche de Noël', 'Événements']
 
 const ITEMS_PER_PAGE = 12
+const WA_NUMBER = '22966166244'
 
 export default function Gallery() {
   const [visible, setVisible] = useState(false)
   const [activeFilter, setActiveFilter] = useState('Tous')
   const [lightbox, setLightbox] = useState(null)
   const [visibleCount, setVisibleCount] = useState(ITEMS_PER_PAGE)
+  const [selection, setSelection] = useState(new Set())
   const ref = useRef(null)
 
   useEffect(() => {
@@ -199,6 +201,30 @@ export default function Gallery() {
     setVisibleCount(ITEMS_PER_PAGE)
   }
 
+  const toggleSelect = (item, e) => {
+    if (e) e.stopPropagation()
+    setSelection((prev) => {
+      const next = new Set(prev)
+      if (next.has(item.src)) next.delete(item.src)
+      else next.add(item.src)
+      return next
+    })
+  }
+
+  const orderSingle = (item) => {
+    const base = window.location.origin
+    const text = `Bonjour ! Je souhaite commander cette création :\n\n${item.label} (${item.cat})\n👉 ${base}${item.src}\n\nPouvez-vous me donner un devis ?`
+    window.open(`https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(text)}`, '_blank')
+  }
+
+  const orderSelection = () => {
+    const base = window.location.origin
+    const items = galleryItems.filter((i) => selection.has(i.src))
+    const list = items.map((item, idx) => `${idx + 1}. ${item.label} (${item.cat})\n   👉 ${base}${item.src}`).join('\n\n')
+    const text = `Bonjour ! Je souhaite commander les créations suivantes :\n\n${list}\n\nPouvez-vous me donner un devis ?`
+    window.open(`https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(text)}`, '_blank')
+  }
+
   return (
     <section id="gallery" className="gallery" ref={ref}>
       <div className="gallery__inner">
@@ -235,11 +261,29 @@ export default function Gallery() {
           {displayed.map((item, i) => (
             <div
               key={item.src}
-              className={`gallery__item ${visible ? 'gallery__item--visible' : ''}`}
+              className={`gallery__item ${visible ? 'gallery__item--visible' : ''} ${selection.has(item.src) ? 'gallery__item--selected' : ''}`}
               style={{ transitionDelay: `${Math.min(i * 60, 600)}ms` }}
               onClick={() => setLightbox(item)}
             >
               <img src={item.src} alt={item.label} loading="lazy" />
+
+              {/* Select button */}
+              <button
+                className={`gallery__select-btn ${selection.has(item.src) ? 'gallery__select-btn--active' : ''}`}
+                onClick={(e) => toggleSelect(item, e)}
+                aria-label={selection.has(item.src) ? 'Retirer de la sélection' : 'Ajouter à la sélection'}
+              >
+                {selection.has(item.src) ? (
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+                    <polyline points="20 6 9 17 4 12"/>
+                  </svg>
+                ) : (
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M12 5v14M5 12h14"/>
+                  </svg>
+                )}
+              </button>
+
               <div className="gallery__item-overlay">
                 <span className="gallery__item-label">{item.label}</span>
                 <span className="gallery__item-cat">{item.cat}</span>
@@ -273,6 +317,30 @@ export default function Gallery() {
         )}
       </div>
 
+      {/* Floating cart */}
+      {selection.size > 0 && (
+        <div className="gallery__cart">
+          <span className="gallery__cart-count">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+            </svg>
+            {selection.size} article{selection.size > 1 ? 's' : ''} sélectionné{selection.size > 1 ? 's' : ''}
+          </span>
+          <div className="gallery__cart-actions">
+            <button className="gallery__cart-clear" onClick={() => setSelection(new Set())}>
+              Vider
+            </button>
+            <button className="gallery__cart-order" onClick={orderSelection}>
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+                <path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.557 4.116 1.529 5.845L.057 23.5l5.797-1.522A11.93 11.93 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.885 0-3.647-.49-5.177-1.348l-.37-.22-3.44.903.918-3.352-.24-.386A9.945 9.945 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/>
+              </svg>
+              Commander via WhatsApp
+            </button>
+          </div>
+        </div>
+      )}
+
       {/* Lightbox */}
       {lightbox && (
         <div className="lightbox" role="dialog" aria-modal="true" aria-label="Visionneuse d'image" onClick={() => setLightbox(null)}>
@@ -280,8 +348,25 @@ export default function Gallery() {
           <div className="lightbox__content" onClick={(e) => e.stopPropagation()}>
             <img src={lightbox.src} alt={lightbox.label} />
             <div className="lightbox__caption">
-              <strong>{lightbox.label}</strong>
-              <span>{lightbox.cat}</span>
+              <div className="lightbox__caption-info">
+                <strong>{lightbox.label}</strong>
+                <span>{lightbox.cat}</span>
+              </div>
+              <div className="lightbox__actions">
+                <button
+                  className={`lightbox__select-btn ${selection.has(lightbox.src) ? 'lightbox__select-btn--active' : ''}`}
+                  onClick={() => toggleSelect(lightbox)}
+                >
+                  {selection.has(lightbox.src) ? '✓ Sélectionné' : '+ Sélectionner'}
+                </button>
+                <button className="lightbox__order-btn" onClick={() => orderSingle(lightbox)}>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+                    <path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.557 4.116 1.529 5.845L.057 23.5l5.797-1.522A11.93 11.93 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.885 0-3.647-.49-5.177-1.348l-.37-.22-3.44.903.918-3.352-.24-.386A9.945 9.945 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/>
+                  </svg>
+                  Commander
+                </button>
+              </div>
             </div>
           </div>
         </div>

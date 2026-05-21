@@ -41,7 +41,7 @@ export default function Navigation() {
     <nav className={`nav ${scrolled ? 'nav--scrolled' : ''}`}>
       <div className="nav__inner">
         <a href="#home" className="nav__logo">
-          <img src="/logo.png" alt="Namis Pastry" className="nav__logo-img" />
+          <img src="/images/logo-namis-new.jpg" alt="Namis Pastry" className="nav__logo-img" />
         </a>
 
         <ul className={`nav__links ${menuOpen ? 'nav__links--open' : ''}`}>

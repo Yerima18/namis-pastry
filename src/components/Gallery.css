@@ -216,6 +216,144 @@
   color: var(--text-muted);
 }
 
+/* Select button on grid item */
+.gallery__select-btn {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 36px;
+  height: 36px;
+  background: rgba(255, 255, 255, 0.9);
+  border: 2px solid transparent;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-muted);
+  cursor: pointer;
+  backdrop-filter: blur(4px);
+  transition: background-color 0.2s, border-color 0.2s, color 0.2s;
+  z-index: 2;
+}
+
+.gallery__select-btn:hover {
+  background: var(--pink-pale);
+  border-color: var(--pink);
+  color: var(--pink);
+}
+
+.gallery__select-btn--active {
+  background: var(--pink);
+  border-color: var(--pink);
+  color: white;
+  -webkit-text-fill-color: white;
+}
+
+/* Selected item border */
+.gallery__item--selected::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border: 3px solid var(--pink);
+  border-radius: 16px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Floating cart */
+.gallery__cart {
+  position: fixed;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--dark);
+  color: white;
+  padding: 14px 20px;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
+  z-index: 500;
+  white-space: nowrap;
+  animation: fadeInUp 0.3s var(--ease-out) both;
+}
+
+.gallery__cart-count {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.88rem;
+  font-weight: 600;
+}
+
+.gallery__cart-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.gallery__cart-clear {
+  background: rgba(255, 255, 255, 0.12);
+  border: none;
+  color: rgba(255, 255, 255, 0.7);
+  padding: 8px 14px;
+  border-radius: 50px;
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.gallery__cart-clear:hover {
+  background: rgba(255, 255, 255, 0.22);
+}
+
+.gallery__cart-order {
+  background: #25d366;
+  border: none;
+  color: white;
+  -webkit-text-fill-color: white;
+  padding: 8px 16px;
+  border-radius: 50px;
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: background-color 0.2s, transform 0.2s;
+}
+
+.gallery__cart-order:hover {
+  background: #1da851;
+  transform: translateY(-1px);
+}
+
+@media (max-width: 640px) {
+  .gallery__cart {
+    bottom: 16px;
+    left: 12px;
+    right: 12px;
+    transform: none;
+    border-radius: 20px;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+    white-space: normal;
+  }
+
+  .gallery__cart-actions {
+    flex-direction: column;
+  }
+
+  .gallery__cart-order,
+  .gallery__cart-clear {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
 /* Lightbox */
 .lightbox {
   position: fixed;
@@ -269,8 +407,17 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 12px;
   padding: 14px 4px 0;
   color: white;
+  flex-wrap: wrap;
+}
+
+.lightbox__caption-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
 }
 
 .lightbox__caption strong {
@@ -284,6 +431,74 @@
   background: rgba(233,30,140,0.2);
   padding: 3px 12px;
   border-radius: 50px;
+}
+
+.lightbox__actions {
+  display: flex;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.lightbox__select-btn {
+  background: rgba(255, 255, 255, 0.15);
+  border: none;
+  color: white;
+  -webkit-text-fill-color: white;
+  padding: 8px 16px;
+  border-radius: 50px;
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background-color 0.2s;
+}
+
+.lightbox__select-btn:hover {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+.lightbox__select-btn--active {
+  background: var(--pink);
+}
+
+.lightbox__order-btn {
+  background: #25d366;
+  border: none;
+  color: white;
+  -webkit-text-fill-color: white;
+  padding: 8px 16px;
+  border-radius: 50px;
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  white-space: nowrap;
+  transition: background-color 0.2s;
+}
+
+.lightbox__order-btn:hover {
+  background: #1da851;
+}
+
+@media (max-width: 600px) {
+  .lightbox__caption {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .lightbox__actions {
+    width: 100%;
+  }
+
+  .lightbox__select-btn,
+  .lightbox__order-btn {
+    flex: 1;
+    justify-content: center;
+  }
 }
 
 @media (max-width: 640px) {
