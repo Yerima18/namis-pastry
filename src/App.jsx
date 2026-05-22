@@ -17,8 +17,8 @@ function App() {
         <About />
         <Specialties />
         <Gallery />
-        <Reviews />
         <Order />
+        <Reviews />
       </main>
       <Footer />
     </div>
